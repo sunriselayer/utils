@@ -60,4 +60,4 @@ jq ".app_state.gov.params.expedited_voting_period = \"30s\""  ~/.sunrise/config/
 
 $SCRIPT_DIR/../utils/chain_init_gen_command.sh reset-node;
 
-systemctl restart cosmovisor
+sudo systemctl restart cosmovisor
