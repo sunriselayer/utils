@@ -1,9 +1,10 @@
 #!/bin/bash
 set -xe
 
-source ~/sunrise-script/setup_node/env.sh
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+source $SCRIPT_DIR/../setup_node/env.sh
 sudo systemctl stop cosmovisor
-cd ~/chain_repo
+cd ~/sunrise-app
 git pull
 make install
 # check file is exist rm file
