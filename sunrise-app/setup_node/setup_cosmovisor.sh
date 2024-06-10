@@ -3,10 +3,10 @@ if [ -z $SETUP_NODE_ENV ]; then
   echo "-----------------"
   echo "not setup env"
   echo "-----------------"
-  CHAIN_REPO=https://github.com/UnUniFi/chain
-  CHAIN_REPO_BRANCHE=develop
-  TARGET=ununifid
-  TARGET_HOME=.ununifi
+  CHAIN_REPO=https://github.com/sunriseLayer/sunrise
+  CHAIN_REPO_BRANCHE=main
+  TARGET=sunrised
+  TARGET_HOME=.sunrise
 fi
 
 cd $HOME

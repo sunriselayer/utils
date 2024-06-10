@@ -4,7 +4,7 @@ set -xe
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 source $SCRIPT_DIR/../setup_node/env.sh
 sudo systemctl stop cosmovisor
-cd ~/sunrise-app
+cd ~/sunrise
 git pull
 make install
 # check file is exist rm file

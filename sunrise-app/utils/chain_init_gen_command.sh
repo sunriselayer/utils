@@ -26,15 +26,15 @@ minor_version=${VERSION_PARTS[1]}
 if [ "$execute_command" = "init" ]; then
   if (( major_version > 0 || minor_version >= 47 )); then
     echo "This is version 0.47 or later."
-    $DAEMON_NAME genesis add-genesis-account my_validator 100000000000usr;
-    $DAEMON_NAME genesis add-genesis-account faucet 500000000000usr;
-    $DAEMON_NAME genesis gentx my_validator 100000000usr --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME genesis add-genesis-account my_validator 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account faucet 50000000000000uvrise,50000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis gentx my_validator 100000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME genesis collect-gentxs;
   else
     echo "This is before version 0.47."
-    $DAEMON_NAME add-genesis-account my_validator 100000000000uguu,100000000000ubtc;
-    $DAEMON_NAME add-genesis-account faucet 500000000000uguu,5000000000ubtc,50000000000ueth;
-    $DAEMON_NAME gentx my_validator 100000000uguu --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME add-genesis-account my_validator 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account faucet 50000000000000uvrise,50000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME gentx my_validator 100000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME collect-gentxs;
   fi
   exit 0;
@@ -47,23 +47,23 @@ elif [ "$execute_command" = "reset-node" ]; then
   USER4=user4
   if (( major_version > 0 || minor_version >= 47 )); then
     echo "This is version 0.47 or later."
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $VAL --keyring-backend test -a) 1000000000000usr;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 100000000000usr;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER2 --keyring-backend test -a) 100000000000usr;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER3 --keyring-backend test -a) 100000000000usr
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER4 --keyring-backend test -a) 100000000000usr;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 50000000000000usr;
-    $DAEMON_NAME genesis gentx $VAL 1000000000usr --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $VAL --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 100000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER2 --keyring-backend test -a) 100000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER3 --keyring-backend test -a) 100000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER4 --keyring-backend test -a) 100000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 50000000000000uvrise,50000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis gentx $VAL 1000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME genesis collect-gentxs;
   else
     echo "This is before version 0.47."
-    $DAEMON_NAME add-genesis-account my_validator 1000000000000uguu,100000000000ubtc;
-    $DAEMON_NAME add-genesis-account user1 100000000000uguu,100000000000ubtc,50000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME add-genesis-account user2 100000000000uguu,100000000000ubtc,50000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME add-genesis-account user3 100000000000uguu,100000000000ubtc,50000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME add-genesis-account user4 100000000000uguu,100000000000ubtc,50000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME add-genesis-account faucet 50000000000000uguu,500000000000ubtc,50000000000ueth,50000000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME gentx my_validator 1000000000uguu --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME add-genesis-account my_validator 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account user1 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account user2 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account user3 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account user4 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account faucet 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME gentx my_validator 1000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME collect-gentxs;
   fi
   exit 0;
@@ -74,17 +74,17 @@ elif [ "$execute_command" = "exec-docker" ]; then
   PRICEFEED=pricefeed
   if (( major_version > 0 || minor_version >= 47 )); then
     echo "This is version 0.47 or later."
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $VAL --keyring-backend test -a) 1000000000000uguu,100000000000ubtc;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 100000000000uguu,100000000000ubtc,50000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 50000000000000uguu,500000000000ubtc,50000000000ueth,50000000000000uusdc,50000000000ustatom;
-    $DAEMON_NAME genesis gentx $VAL 1000000000000uguu --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $VAL --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 50000000000000uvrise,50000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME genesis gentx $VAL 1000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME genesis collect-gentxs;
   else
     echo "This is before version 0.47."
-    $DAEMON_NAME add-genesis-account $VAL 100000000000uguu,100000000000ubtc;
-    $DAEMON_NAME add-genesis-account $FAUCET 500000000000uguu,5000000000ubtc,50000000000ueth;
-    $DAEMON_NAME add-genesis-account $USER1 1000000uguu;
-    $DAEMON_NAME gentx $VAL 1000000000000uguu --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME add-genesis-account $VAL 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account $USER1 1000000000000uvrise,1000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME add-genesis-account $FAUCET 50000000000000uvrise,50000000000000urise,10000000000uusdt,10000000000uusdc,1000000000uweth,10000000000uoas;
+    $DAEMON_NAME gentx $VAL 1000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME collect-gentxs;
   fi
   exit 0;
