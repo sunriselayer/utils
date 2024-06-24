@@ -55,7 +55,7 @@ sed -i 's#address = "tcp://localhost:1317"#address = "tcp://0.0.0.0:1317"#' ~/.s
 sed -i 's#laddr = "tcp://127.0.0.1:26657"#laddr = "tcp://0.0.0.0:26657"#' ~/.sunrise/config/config.toml;
 
 jq ".app_state.gov.params.voting_period = \"120s\""  ~/.sunrise/config/genesis.json > temp.json ; mv temp.json ~/.sunrise/config/genesis.json;
-jq ".app_state.gov.params.expedited_voting_period = \"30s\""  ~/.sunrise/config/genesis.json > temp.json ; mv temp.json ~/.sunrise/config/genesis.json;
+jq ".app_state.gov.params.expedited_voting_period = \"3600s\""  ~/.sunrise/config/genesis.json > temp.json ; mv temp.json ~/.sunrise/config/genesis.json;
 
 
 $SCRIPT_DIR/../utils/chain_init_gen_command.sh reset-node;
