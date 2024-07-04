@@ -1,13 +1,13 @@
 #!/bin/bash
 
 TARGET_PEERS=(
-  "44.213.62.82:26656"  # 監視対象のピア1 (IPアドレス:ポート番号)
+  "44.213.62.82:26656"  # peer (IP address:port)
   "44.222.102.202:26656" 
   "18.197.226.58:26656"
   "13.52.180.217:26656"
   "13.208.246.16:26656"
 )
-DAEMON_NAME="cosmovisor"      # 再起動対象のデーモン名
+DAEMON_NAME="cosmovisor"      # daemon name
 
 while true; do
   down_count=0
@@ -23,5 +23,5 @@ while true; do
     sudo systemctl restart ${DAEMON_NAME}
   fi
 
-  sleep 60  # 60秒ごとに監視
+  sleep 60  # every 60sec
 done
