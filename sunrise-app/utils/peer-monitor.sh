@@ -7,6 +7,7 @@ TARGET_PEERS=(
   "13.52.180.217:26656"
   "13.208.246.16:26656"
 )
+TARGET_PORT="26656"
 DAEMON_NAME="cosmovisor"      # daemon name
 
 while true; do
@@ -18,8 +19,21 @@ while true; do
     fi
   done
 
-  if [ ${down_count} -ge 2 ]; then
-    echo "$(date) 2 or more connections are down. Restarting ${DAEMON_NAME}..."
+  queue_size=0  # init
+    for peer in "${TARGET_PEERS[@]}"; do
+       peer_queue_size=$(ss -nt state ESTABLISHED "( dport = :${TARGET_PORT} or sport = :${TARGET_PORT} )" | grep "${peer}" | awk '{print $1}' | sed 's/.*recv-q://')
+      if [ -n "${peer_queue_size}" ]; then
+           queue_size=$((queue_size + peer_queue_size))
+      fi
+  done
+
+  if [ ${queue_size} -gt 10000 ]; then 
+      echo "$(date) Receive queue size is over 10000."
+      down_count=$((down_count + 1))
+  fi
+
+  if [ ${down_count} -ge 1 ]; then
+    echo "$(date) 1 or more connections are down. Restarting ${DAEMON_NAME}..."
     sudo systemctl restart ${DAEMON_NAME}
   fi
 
