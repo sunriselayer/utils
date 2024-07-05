@@ -45,8 +45,8 @@ echo $USER_MNEMONIC_3    | $DAEMON_NAME keys add $USER3  --recover --keyring-bac
 echo $USER_MNEMONIC_4    | $DAEMON_NAME keys add $USER4  --recover --keyring-backend=test
 
 sed -i '/\[api\]/,+3 s/enable = false/enable = true/' ~/.sunrise/config/app.toml;
-sed -i -e 's/\bstake\b/usr/g' ~/.sunrise/config/genesis.json
-sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0usr"/' ~/.sunrise/config/app.toml;
+sed -i -e 's/\bstake\b/urise/g' ~/.sunrise/config/genesis.json
+sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0urise"/' ~/.sunrise/config/app.toml;
 sed -i 's/mode = "full"/mode = "validator"/' ~/.sunrise/config/config.toml;
 sed -i 's/enabled-unsafe-cors = false/enabled-unsafe-cors = true/' ~/.sunrise/config/app.toml;
 
