@@ -48,26 +48,35 @@ elif [ "$execute_command" = "reset-node" ]; then
   if (( major_version > 0 || minor_version >= 47 )); then
     echo "This is version 0.47 or later."
     $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $VAL --keyring-backend test -a) 1000000000000uvrise,10000000urise;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000ibc/uusdc,100000000000ibc/uusdt,100000000000ibc/uatom,1000000000ibc/uweth,100000000000ibc/ushib;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER2 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000ibc/uusdc,100000000000ibc/uusdt,100000000000ibc/uatom,1000000000ibc/uweth,100000000000ibc/ushib;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER3 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000ibc/uusdc,100000000000ibc/uusdt,100000000000ibc/uatom,1000000000ibc/uweth,100000000000ibc/ushib;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER4 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000ibc/uusdc,100000000000ibc/uusdt,100000000000ibc/uatom,1000000000ibc/uweth,100000000000ibc/ushib;
-    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 500000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER1 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000000000ibc/uusdc,100000000000000000ibc/uusdt,100000000000000000ibc/uatom,1000000000000000ibc/uweth,100000000000000000000000ibc/ushib,100000000000000000000ibc/uibgt,100000000000000000000ibc/uoas,100000000000000000000000ibc/upepe;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER2 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000000000ibc/uusdc,100000000000000000ibc/uusdt,100000000000000000ibc/uatom,1000000000000000ibc/uweth,100000000000000000000000ibc/ushib,100000000000000000000ibc/uibgt,100000000000000000000ibc/uoas,100000000000000000000000ibc/upepe;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER3 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000000000ibc/uusdc,100000000000000000ibc/uusdt,100000000000000000ibc/uatom,1000000000000000ibc/uweth,100000000000000000000000ibc/ushib,100000000000000000000ibc/uibgt,100000000000000000000ibc/uoas,100000000000000000000000ibc/upepe;
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $USER4 --keyring-backend test -a) 1000000000000uvrise,1000000000000urise,100000000000000000ibc/uusdc,100000000000000000ibc/uusdt,100000000000000000ibc/uatom,1000000000000000ibc/uweth,100000000000000000000000ibc/ushib,100000000000000000000ibc/uibgt,100000000000000000000ibc/uoas,100000000000000000000000ibc/upepe;
+    # faucet
+    $DAEMON_NAME genesis add-genesis-account $($DAEMON_NAME keys show $FAUCET --keyring-backend test -a) 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1fclku92ml8t8lsvyzed498vd40x9l3d3s6kgef 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1lm4d2fvhejg209wtjtznhj25xvwedza7kfvp9r 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1pgmjunt6vwras66ect0vxnpdvkwnvhpxx9aha7 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise184q90d6wvrj5n72h5gmsmz3gkmjgn8hyfgap4g 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise17yqk0jqpvdxsmm6tw3keth6n4d2ssvjwyut564 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1jwqg62h3a0dcdca0f6k9lf2skhx0scgxy36u72 100000000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise18wm7x90y5p9dc96yusxedq69gnah0lcd2kr0z5 100000000000000urise;
     # validators
-    $DAEMON_NAME genesis add-genesis-account sunrise1s35m8qtuhvecc47c2vjyml9cljvn3yrufh56sn 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1jll9zuas2qt7evcp7hj9gq8ldmtmdc46svcnqd 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1gtnvs6667awkpd80ltdxaptz3f7hsaat99l8a8 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise133fhqjfd3mmku3vwczsf5lyzuhavfmqly4f79w 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise12tppeqtaxtcddpjzguyfq7apnnljksnnvpszxq 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1007qgz36cp3z4vkm5k8tx0uyf59ey6jrmjv8qp 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1rl93uudq2l2lx54l7m54caycqenfj9reer4mlf 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1yvh0yvum6t2rc9xsv9cdw26xn393q5a0wxreq3 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1etx55kw7tkmnjqz0k0mups4ewxlr324t8c7704 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1jt9w26mpxxjsk63mvd4m2ynj0af09csl3v4hcz 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1lyktdeyh8ltt4ghc2fj8vgnkpt3lj4jf947npn 8300000000000urise;
-    $DAEMON_NAME genesis add-genesis-account sunrise1jmtfcmfsjxzyp7hc8kscv35khvmdca8hgw2n8t 8300000000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1s35m8qtuhvecc47c2vjyml9cljvn3yrufh56sn 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1jll9zuas2qt7evcp7hj9gq8ldmtmdc46svcnqd 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1gtnvs6667awkpd80ltdxaptz3f7hsaat99l8a8 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise133fhqjfd3mmku3vwczsf5lyzuhavfmqly4f79w 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise12tppeqtaxtcddpjzguyfq7apnnljksnnvpszxq 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1007qgz36cp3z4vkm5k8tx0uyf59ey6jrmjv8qp 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1rl93uudq2l2lx54l7m54caycqenfj9reer4mlf 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1yvh0yvum6t2rc9xsv9cdw26xn393q5a0wxreq3 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1etx55kw7tkmnjqz0k0mups4ewxlr324t8c7704 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1jt9w26mpxxjsk63mvd4m2ynj0af09csl3v4hcz 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1lyktdeyh8ltt4ghc2fj8vgnkpt3lj4jf947npn 9000000000000uvrise,10000000urise;
+    $DAEMON_NAME genesis add-genesis-account sunrise1jmtfcmfsjxzyp7hc8kscv35khvmdca8hgw2n8t 9000000000000uvrise,10000000urise;
 
     $DAEMON_NAME genesis gentx $VAL 100000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
+    $DAEMON_NAME genesis gentx $USER1 100000000000uvrise --chain-id $CHAIN_ID --keyring-backend test;
     $DAEMON_NAME genesis collect-gentxs;
   else
     echo "This is before version 0.47."
