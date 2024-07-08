@@ -50,8 +50,8 @@ sunrised tx liquiditypool create-pool --denom-base=ibc/stuatom --denom-quote=ibc
 sleep 20
 
 # Gauge Vote
-sunrised tx liquidityincentive vote-gauge --weights='{"pool_id":0,"weight":"100000000000000000"}' --weights='{"pool_id":1,"weight":"100000000000000000"}' \
---weights='{"pool_id":2,"weight":"100000000000000000"}' --weights='{"pool_id":3,"weight":"100000000000000000"}' \
---weights='{"pool_id":4,"weight":"100000000000000000"}' --weights='{"pool_id":5,"weight":"100000000000000000"}' \
---weights='{"pool_id":6,"weight":"100000000000000000"}'  --from=my_validator \
+sunrised tx liquidityincentive vote-gauge --weights='{"pool_id":1,"weight":"100000000000000000"}' --weights='{"pool_id":2,"weight":"100000000000000000"}' \
+--weights='{"pool_id":3,"weight":"100000000000000000"}' --weights='{"pool_id":4,"weight":"100000000000000000"}' \
+--weights='{"pool_id":5,"weight":"100000000000000000"}' --weights='{"pool_id":6,"weight":"100000000000000000"}' \
+--weights='{"pool_id":7,"weight":"100000000000000000"}'  --from=my_validator \
 --chain-id=sunrise-test-0.1 --yes --keyring-backend=test --fees="10000urise"
