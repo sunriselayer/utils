@@ -1,7 +1,8 @@
 #!/bin/bash
 
 TARGET_PEERS=(
-  "44.213.62.82:26656"  # peer (IP address:port)
+  "13.212.253.1:26656" # peer (IP address:port)
+  "44.213.62.82:26656"  
   "44.222.102.202:26656" 
   "18.197.226.58:26656"
   "13.52.180.217:26656"
@@ -32,8 +33,8 @@ while true; do
       down_count=$((down_count + 1))
   fi
 
-  if [ ${down_count} -ge 1 ]; then
-    echo "$(date) 1 or more connections are down. Restarting ${DAEMON_NAME}..."
+  if [ ${down_count} -ge 4 ]; then
+    echo "$(date) 4 or more connections are down. Restarting ${DAEMON_NAME}..."
     sudo systemctl restart ${DAEMON_NAME}
   fi
 
