@@ -4,7 +4,7 @@ if [ -z $SETUP_NODE_ENV ]; then
   echo "not setup env"
   echo "-----------------"
   CHAIN_REPO=https://github.com/sunriseLayer/sunrise
-  CHAIN_REPO_BRANCHE=main
+  CHAIN_REPO_BRANCHE=v1.0.0
   TARGET=sunrised
   TARGET_HOME=.sunrise
 fi
