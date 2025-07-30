@@ -1,0 +1,284 @@
+[global]
+log_level = "info"
+
+[mode.clients]
+enabled = true
+refresh = true
+misbehaviour = true
+
+[mode.connections]
+enabled = false
+
+[mode.channels]
+enabled = false
+
+[mode.packets]
+enabled = true
+clear_interval = 100
+clear_on_start = true
+tx_confirmation = false
+auto_register_counterparty_payee = false
+clear_limit = 50
+
+[mode.packets.ics20_max_memo_size]
+enabled = true
+size = 32768
+
+[mode.packets.ics20_max_receiver_size]
+enabled = true
+size = 2048
+
+[rest]
+enabled = false
+host = "127.0.0.1"
+port = 3000
+
+[telemetry]
+enabled = false
+host = "127.0.0.1"
+port = 3001
+
+[telemetry.buckets.latency_submitted]
+start = 500
+end = 20000
+buckets = 10
+
+[telemetry.buckets.latency_confirmed]
+start = 1000
+end = 30000
+buckets = 10
+
+[[chains]]
+type = "CosmosSdk"
+id = "provider"
+rpc_addr = "https://rpc.provider-sentry-01.ics-testnet.polypore.xyz/"
+grpc_addr = "https://grpc.provider-sentry-01.ics-testnet.polypore.xyz/"
+rpc_timeout = "10s"
+trusted_node = false
+account_prefix = "cosmos"
+key_name = "user1"
+key_store_type = "Test"
+store_prefix = "ibc"
+default_gas = 100000
+max_gas = 800000
+gas_multiplier = 1.4
+max_msg_num = 30
+max_tx_size = 180000
+max_grpc_decoding_size = 33554432
+query_packets_chunk_size = 50
+clock_drift = "5s"
+max_block_time = "30s"
+client_refresh_rate = "1/3"
+ccv_consumer_chain = false
+memo_prefix = ""
+sequential_batch_tx = false
+allow_ccq = true
+
+[chains.event_source]
+mode = "pull"
+interval = "500ms"
+max_retries = 4
+
+[chains.trust_threshold]
+numerator = 2
+denominator = 3
+
+[chains.gas_price]
+price = 0.025
+denom = "uatom"
+
+[chains.packet_filter]
+policy = "allow"
+list = [[
+    "transfer",
+    "channel-493",
+]]
+
+[chains.packet_filter.min_fees]
+
+[chains.dynamic_gas_price]
+enabled = false
+multiplier = 1.1
+max = 0.6
+
+[chains.address_type]
+derivation = "cosmos"
+
+[chains.excluded_sequences]
+
+[[chains]]
+type = "CosmosSdk"
+id = "pion-1"
+rpc_addr = "https://rpc-falcron.pion-1.ntrn.tech"
+grpc_addr = "http://grpc-falcron.pion-1.ntrn.tech"
+rpc_timeout = "10s"
+trusted_node = false
+account_prefix = "neutron"
+key_name = "user1"
+key_store_type = "Test"
+store_prefix = "ibc"
+default_gas = 100000
+max_gas = 800000
+gas_multiplier = 1.4
+max_msg_num = 30
+max_tx_size = 180000
+max_grpc_decoding_size = 33554432
+query_packets_chunk_size = 50
+clock_drift = "5s"
+max_block_time = "30s"
+client_refresh_rate = "1/3"
+ccv_consumer_chain = false
+memo_prefix = ""
+sequential_batch_tx = false
+allow_ccq = true
+
+[chains.event_source]
+mode = "pull"
+interval = "500ms"
+max_retries = 4
+
+[chains.trust_threshold]
+numerator = 2
+denominator = 3
+
+[chains.gas_price]
+price = 0.053
+denom = "untrn"
+
+[chains.packet_filter]
+policy = "allow"
+list = [[
+]]
+
+[chains.packet_filter.min_fees]
+
+[chains.dynamic_gas_price]
+enabled = false
+multiplier = 1.1
+max = 0.6
+
+[chains.address_type]
+derivation = "cosmos"
+
+[chains.excluded_sequences]
+
+[[chains]]
+type = "CosmosSdk"
+id = "grand-1"
+rpc_addr = "https://noble-testnet-rpc.polkachu.com"
+grpc_addr = "http://noble-testnet-grpc.polkachu.com:21590"
+rpc_timeout = "10s"
+trusted_node = false
+account_prefix = "noble"
+key_name = "user1"
+key_store_type = "Test"
+store_prefix = "ibc"
+default_gas = 100000
+max_gas = 800000
+gas_multiplier = 1.4
+max_msg_num = 30
+max_tx_size = 180000
+max_grpc_decoding_size = 33554432
+query_packets_chunk_size = 50
+clock_drift = "5s"
+max_block_time = "30s"
+client_refresh_rate = "1/3"
+ccv_consumer_chain = false
+memo_prefix = ""
+sequential_batch_tx = false
+allow_ccq = true
+
+[chains.event_source]
+mode = "pull"
+interval = "500ms"
+max_retries = 4
+
+[chains.trust_threshold]
+numerator = 2
+denominator = 3
+
+[chains.gas_price]
+price = 0.1
+denom = "uusdc"
+
+[chains.packet_filter]
+policy = "allow"
+list = [[
+    "transfer",
+    "channel-554",
+]]
+
+[chains.packet_filter.min_fees]
+
+[chains.dynamic_gas_price]
+enabled = true
+multiplier = 1.1
+max = 0.6
+
+[chains.address_type]
+derivation = "cosmos"
+
+[chains.excluded_sequences]
+
+[[chains]]
+type = "CosmosSdk"
+id = "sunrise-test-da-5"
+rpc_addr = "https://sunrise-test-da-5.cauchye.net"
+grpc_addr = "http://sunrise-test-da-5.cauchye.net:9090"
+rpc_timeout = "10s"
+trusted_node = false
+account_prefix = "sunrise"
+key_name = "user1"
+key_store_type = "Test"
+store_prefix = "ibc"
+default_gas = 100000
+max_gas = 800000
+gas_multiplier = 1.1
+max_msg_num = 30
+max_tx_size = 180000
+max_grpc_decoding_size = 33554432
+query_packets_chunk_size = 50
+clock_drift = "5s"
+max_block_time = "30s"
+client_refresh_rate = "1/3"
+ccv_consumer_chain = false
+memo_prefix = ""
+sequential_batch_tx = false
+allow_ccq = true
+
+[chains.event_source]
+mode = "pull"
+interval = "500ms"
+max_retries = 4
+
+[chains.trust_threshold]
+numerator = 2
+denominator = 3
+
+[chains.gas_price]
+price = 0.025
+denom = "uusdrise"
+
+[chains.packet_filter]
+policy = "allow"
+list = [
+    ["transfer", "channel-0"],
+    ["transfer", "channel-1"],
+]
+
+[chains.packet_filter.min_fees]
+
+[chains.dynamic_gas_price]
+enabled = true
+multiplier = 1.1
+max = 0.6
+
+[chains.address_type]
+derivation = "cosmos"
+
+[chains.excluded_sequences]
+
+[tracing_server]
+enabled = false
+port = 5555
+
